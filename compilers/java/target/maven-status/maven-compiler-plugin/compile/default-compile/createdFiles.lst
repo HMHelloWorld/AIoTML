@@ -1,0 +1,10 @@
+org\aiotml\compilers\java\JavaThingApiCompiler.class
+org\aiotml\compilers\java\JavaThingImplCompiler.class
+org\aiotml\compilers\java\JavaCompiler.class
+org\aiotml\compilers\java\JavaCfgBuildCompiler.class
+org\aiotml\compilers\java\JavaThingActionCompiler.class
+org\aiotml\compilers\java\GraalCompiler.class
+org\aiotml\compilers\java\JavaCfgMainGenerator.class
+org\aiotml\compilers\java\Java2Swing.class
+org\aiotml\compilers\java\GraalCfgBuildCompiler.class
+org\aiotml\compilers\java\JavaHelper.class

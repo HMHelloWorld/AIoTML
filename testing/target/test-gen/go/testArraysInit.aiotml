@@ -1,0 +1,222 @@
+thing TestArrays includes Test @test `x # e1827364554637281e` {
+	property index : UInt16 = 0
+	property array : Char [ 8 ] = { '1' , '2' , '3' , '4' , '5' , '6' , '7' , '8' }
+	statechart TestArrays init sstart {
+		state sstart {
+			transition -> initialized
+			event m : Test?In
+			guard m.c == 'x'
+		}
+		state initialized {
+			on entry do
+				TestOut('e')
+				index = 0
+				while (index < 8) do
+					TestOut(array [index])
+					TestOut(array [7 - index])
+					index = index + 1
+				end
+				TestOut('e')
+				TestDone()
+			end
+		}
+	}
+}
+datatype Byte<1>
+	@type_checker `Integer`
+	@c_type `uint8_t`
+	@java_type `byte`
+	@js_type `byte`
+	@go_type `byte`
+datatype Char<1>
+	@type_checker `Integer`
+	@c_type `char`
+	@java_type `byte`
+	@js_type `byte`
+	@go_type `byte`
+datatype Boolean<1>
+	@type_checker `Boolean`
+	@c_type `bool`
+	@java_type `boolean`
+	@js_type `boolean`
+	@go_type `bool`
+datatype UInt8<1>
+	@type_checker `Integer`
+	@c_type `uint8_t`
+	@java_type `int`
+	@js_type `short`
+	@go_type `uint8`
+datatype Int8<1>
+	@type_checker `Integer`
+	@c_type `int8_t`
+	@java_type `int`
+	@js_type `short`
+	@go_type `int8`
+datatype UInt16<2>
+	@type_checker `Integer`
+	@c_type `uint16_t`
+	@java_type `int`
+	@js_type `int`
+	@go_type `uint16`
+datatype Int16<2>
+	@type_checker `Integer`
+	@c_type `int16_t`
+	@java_type `int`
+	@js_type `short`
+	@go_type `int16`
+datatype Int32<4>
+	@type_checker `Integer`
+	@c_type `int32_t`
+	@java_type `long`
+	@js_type `int`
+	@go_type `int32`
+datatype UInt32<4>
+	@type_checker `Integer`
+	@c_type `uint32_t`
+	@java_type `long`
+	@js_type `long`
+	@go_type `uint32`
+datatype Long<4>
+	@type_checker `Integer`
+	@c_type `uint32_t`
+	@java_type `long`
+	@js_type `long`
+	@go_type `uint32`
+datatype Int64<8>
+	@type_checker `Integer`
+	@c_type `int64_t`
+	@java_type `long`
+	@js_type `long`
+	@go_type `int64`
+datatype UInt64<8>
+	@type_checker `Integer`
+	@c_type `uint64_t`
+	@java_type `long`
+	@js_type `long`
+	@go_type `uint64`
+datatype Integer<2>
+	@type_checker `Integer`
+	@c_type `int16_t`
+	@java_type `int`
+	@js_type `short`
+	@go_type `int16`
+datatype Float<4>
+	@type_checker `Real`
+	@c_type `float`
+	@java_type `float`
+	@js_type `float`
+	@go_type `float32`
+datatype Double<8>
+	@type_checker `Real`
+	@c_type `double`
+	@java_type `double`
+	@js_type `double`
+	@go_type `float64`
+object String
+	@serializable
+	@c_type `char *`
+	@java_type `String`
+	@js_type `String`
+	@go_type `string`
+enumeration DigitalState as UInt8 {
+	LOW = 0
+	HIGH = 1
+}
+thing fragment TestMsgs {
+	message In(c : Char)
+	message Out(c : Char)
+	message Failure(reason : Char)
+	message Done()
+}
+thing fragment Test includes TestMsgs , FileDumper {
+	required port Test {
+		sends Out sends Done sends Failure receives In receives Done
+	}
+	function TestOut(c : Char) do
+		DumpWrite(c)
+		Test!Out(c)
+	end
+	function TestDone() do
+		Test!Done()
+	end
+	function TestFailure(reason : Char) do
+		DumpFailure(reason)
+		Test!Failure(reason)
+		TestDone()
+	end
+}
+thing TestHarness includes TestMsgs {
+	provided port test {
+		sends In sends Done
+	}
+	statechart Send init Chars {
+		state Chars {
+			on entry do
+				test!In('x')
+				test!Done()
+			end
+		}
+	}
+}
+thing fragment FileDumper @go_import `os` {
+	property DumpPath : String
+	function DumpWrite(C : Char) do
+		`file, err := os.OpenFile(` & DumpPath & `, os.O_APPEND|os.O_RDWR, 0666)`
+	`if err != nil {`
+	`  panic(err)`
+	`}`
+	`defer file.Close()`
+		`file.Write([]byte { ` & C & ` })`
+	end
+	function DumpFailure(Reason : Char) do
+		DumpWrite('\n')
+		DumpWrite('[')
+		DumpWrite('F')
+		DumpWrite('A')
+		DumpWrite('I')
+		DumpWrite('L')
+		DumpWrite('U')
+		DumpWrite('R')
+		DumpWrite('E')
+		DumpWrite(']')
+		DumpWrite(' ')
+		DumpWrite(Reason)
+		DumpWrite('\n')
+	end
+}
+thing Synchronizer includes TestMsgs @go_import `os` {
+	provided port test_result {
+		receives Done
+	}
+	property test_finished : Boolean = false
+	function StopExecution(Code : Integer) do
+	`if Code > 0 {`
+		`  os.Exit(int(` & Code & `));`
+	`}`
+	`state.Runtime.StopWhenInactive()`
+	end
+	function CheckCompleted() : Boolean do
+		var Completed : Boolean = true
+		if (not test_finished) Completed = false
+		return Completed
+	end
+	statechart Synchronize init Listen {
+		state Listen {
+			internal
+			event test_result?Done
+			action test_finished = true
+			transition -> Stop guard (CheckCompleted())
+		}
+		final state Stop {
+			on entry StopExecution(0)
+		}
+	}
+}
+configuration testconfiguration_generated {
+	instance test : TestArrays
+	instance harness_generated : TestHarness
+	instance synchronizer_generated : Synchronizer
+	connector test.Test => harness_generated . test
+	connector test.Test => synchronizer_generated . test_result
+	set test.DumpPath = "TestArrays_1"
+}

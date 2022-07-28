@@ -1,0 +1,40 @@
+
+import "MQTTEcho.aiotml"
+import "TestMQTTReceiverPortJavaMqttJson.aiotml"
+import "TestMQTTSenderPortJavaMqttJson.aiotml"
+import "../java/JavaMQTTAdapter.aiotml"
+
+configuration EchoJava 
+@compiler "java"
+{
+	instance echo : MQTTEcho
+	
+	instance rx : TestMQTTReceiverPort_JavaMqttJson_Impl
+		set rx.mqtt_topic_name = "pong"
+	connector rx.receiver => echo.sender
+	
+	instance tx : TestMQTTSenderPort_JavaMqttJson_Impl
+		set tx.mqtt_topic_name = "ping"
+	connector echo.receiver => tx.sender
+	
+	instance mqtt : JavaMQTTAdapter
+	
+	connector rx.javamqtt => mqtt.mqtt
+	connector tx.javamqtt => mqtt.mqtt
+	connector echo.mqtt => mqtt.mqtt
+	
+}
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+

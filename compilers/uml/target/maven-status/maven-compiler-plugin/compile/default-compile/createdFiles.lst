@@ -1,0 +1,3 @@
+org\aiotml\compilers\uml\PlantUMLCompiler.class
+org\aiotml\compilers\uml\PlantUMLCfgMainGenerator.class
+org\aiotml\compilers\uml\PlantUMLThingImplCompiler.class

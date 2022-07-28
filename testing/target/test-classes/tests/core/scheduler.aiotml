@@ -1,0 +1,18 @@
+import "datatypes.aiotml" from stl
+
+/*****************************************************************************
+ * Definition of the AiotML scheduler messages
+ *****************************************************************************/
+/*
+thing fragment AiotMLSchedulerMsg {
+	message setup();
+	message poll();
+}
+
+thing AiotMLScheduler includes AiotMLSchedulerMsg 
+{
+	provided port Polling {
+		sends poll, setup
+	}
+}
+*/

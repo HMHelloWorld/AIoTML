@@ -1,0 +1,7 @@
+org\aiotml\compliers\tests\LoadModelTestsCommon$modelTestDatatypes.class
+org\aiotml\compliers\tests\TestLoadThingFile.class
+org\aiotml\compliers\tests\LoadModelTestsCommon$modelTestMessages.class
+org\aiotml\compliers\tests\TestLoadIncludeThingFile.class
+org\aiotml\compliers\tests\TestSaveThingFile.class
+org\aiotml\compliers\tests\LoadModelTestsCommon.class
+org\aiotml\compliers\tests\TestSaveIncludeThingFile.class

@@ -1,0 +1,11 @@
+org.aiotml.networkplugins.c.posix.PosixTextDigitSerializerPlugin
+org.aiotml.networkplugins.c.posix.PosixJSONSerializerPlugin
+org.aiotml.networkplugins.c.posix.PosixTelluCloudSerializerPlugin
+org.aiotml.networkplugins.c.CByteArraySerializerPlugin
+org.aiotml.networkplugins.c.CNoneSerializerPlugin
+org.aiotml.networkplugins.c.CMSPSerializerPlugin
+org.aiotml.networkplugins.java.JavaByteArraySerializerPlugin
+org.aiotml.networkplugins.java.JavaJSONSerializerPlugin
+org.aiotml.networkplugins.js.JSByteArraySerializerPlugin
+org.aiotml.networkplugins.js.JSJSONSerializerPlugin
+org.aiotml.networkplugins.py.PyJSONSerializerPlugin

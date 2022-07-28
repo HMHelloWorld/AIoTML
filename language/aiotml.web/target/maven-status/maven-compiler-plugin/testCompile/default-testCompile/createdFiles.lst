@@ -1,0 +1,4 @@
+org\aiotml\xtext\web\AiotMLWebModule.class
+org\aiotml\xtext\web\ServerLauncher.class
+org\aiotml\xtext\web\AiotMLWebSetup.class
+org\aiotml\xtext\web\AiotMLServlet.class

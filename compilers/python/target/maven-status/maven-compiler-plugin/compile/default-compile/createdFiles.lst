@@ -1,0 +1,5 @@
+org\aiotml\compilers\python\PyCompiler.class
+org\aiotml\compilers\python\PyThingApiCompiler.class
+org\aiotml\compilers\python\PyContext.class
+org\aiotml\compilers\python\PyThingActionCompiler.class
+org\aiotml\compilers\python\PyThingImplCompiler.class

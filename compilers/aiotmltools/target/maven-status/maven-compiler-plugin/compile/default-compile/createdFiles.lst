@@ -1,0 +1,16 @@
+org\aiotml\aiotmltools\AiotMLToolRegistry.class
+org\aiotml\monitor\FunctionMonitoring.class
+org\aiotml\monitor\EventMonitoring.class
+org\aiotml\aiotmltools\AiotMLTool.class
+org\aiotml\generator\javascript\JavaScriptJSONMQTTGenerator.class
+org\aiotml\testconfigurationgenerator\TestConfigurationGenerator.class
+org\aiotml\generator\java\AiotMLSerializerDev.class
+org\aiotml\generator\posix\PosixJSONMQTTGenerator.class
+org\aiotml\monitor\MonitorGenerator.class
+org\aiotml\monitor\PropertyMonitoring.class
+org\aiotml\testconfigurationgenerator\TestGenConfig.class
+org\aiotml\monitor\FunctionMonitoringBinary.class
+org\aiotml\testconfigurationgenerator\Language.class
+org\aiotml\generator\java\JavaJSONMQTTGenerator.class
+org\aiotml\monitor\MonitoringAspect.class
+org\aiotml\generator\go\GoSONMQTTGenerator.class

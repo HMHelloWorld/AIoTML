@@ -1,0 +1,15 @@
+org\aiotml\testing\reportbuilder\ReportBuilderCommandline$1.class
+org\aiotml\testing\reportbuilder\parser\Test$1.class
+org\aiotml\testing\reportbuilder\parser\Reparser.class
+org\aiotml\testing\reportbuilder\parser\Test.class
+org\aiotml\testing\reportbuilder\ReportBuilderCommandline.class
+org\aiotml\testing\reportbuilder\Result.class
+org\aiotml\testing\reportbuilder\Result$1.class
+org\aiotml\testing\reportbuilder\Summary$1.class
+org\aiotml\testing\reportbuilder\ReportBuilderMojo.class
+org\aiotml\testing\reportbuilder\TestCaseResult.class
+org\aiotml\testing\reportbuilder\parser\TestCase.class
+org\aiotml\testing\reportbuilder\Summary.class
+org\aiotml\testing\reportbuilder\parser\Suite.class
+org\aiotml\testing\reportbuilder\ReportBuilder.class
+org\aiotml\testing\reportbuilder\parser\Test$2.class

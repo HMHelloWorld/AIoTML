@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="*&#xD;&#xA;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);&#xD;&#xA;you may not use this file except in compliance with the License.&#xD;&#xA;You may obtain a copy of the License at&#xD;&#xA; *&#xD;&#xA;     http://www.apache.org/licenses/LICENSE-2.0&#xD;&#xA; *&#xD;&#xA;Unless required by applicable law or agreed to in writing, software&#xD;&#xA;distributed under the License is distributed on an &quot;AS IS&quot; BASIS,&#xD;&#xA;WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.&#xD;&#xA;See the License for the specific language governing permissions and&#xD;&#xA;limitations under the License.&#xD;&#xA; *&#xD;&#xA;See the NOTICE file distributed with this work for additional&#xD;&#xA;information regarding copyright ownership."
+    modelDirectory="/aiotml/src-gen" modelPluginID="aiotml" forceOverwrite="true"
+    modelName="AiotML" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="8.0" copyrightFields="false" runtimeVersion="2.20">
+  <genPackages prefix="AiotML" basePackage="org.aiotml.xtext" disposableProviderFactory="true"
+      fileExtensions="aiotml" ecorePackage="AiotML.ecore#/">
+    <genClasses ecoreClass="AiotML.ecore#//AiotMLModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//AiotMLModel/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//AiotMLModel/templates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//AiotMLModel/types"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//AiotMLModel/protocols"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//AiotMLModel/configs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Template">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//Template/path"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//Import/importURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//Import/from"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//PlatformAnnotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//PlatformAnnotation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//PlatformAnnotation/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//AnnotatedElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//AnnotatedElement/annotations"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Variable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Variable/typeRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Variable/tensor"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//TypeRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//TypeRef/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//TypeRef/isArray"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//TypeRef/cardinality"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Type"/>
+    <genClasses ecoreClass="AiotML.ecore#//PrimitiveType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//PrimitiveType/ByteSize"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ObjectType"/>
+    <genClasses ecoreClass="AiotML.ecore#//Enumeration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Enumeration/typeRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Enumeration/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//EnumerationLiteral">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//EnumerationLiteral/init"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Tensor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Tensor/dims"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//Tensor/datatype"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Layer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Layer/layernums"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//Layer/num"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//Layer/af"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Model/layers"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ModelReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ModelReference/typeRef"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Strategy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Strategy/tensor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Strategy/devices"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Strategy/rewdims"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Strategy/obsdims"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Strategy/actiondims"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Strategy/pmodel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Strategy/qmodel"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//MultiAgent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//MultiAgent/agents"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//MultiAgentProperty"/>
+    <genClasses ecoreClass="AiotML.ecore#//StrategyProperty"/>
+    <genClasses ecoreClass="AiotML.ecore#//StrategyAssignment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//StrategyAssignment/strategy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//StrategyAssignment/agent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//StrategyAssignment/rbindFunction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//StrategyAssignment/ibindFunction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//StrategyAssignment/obindFunction"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Thing">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//Thing/fragment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//Thing/includes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Thing/messages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Thing/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Thing/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Thing/cproperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Thing/functions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Thing/assign"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Thing/strategys"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Thing/sassigns"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Thing/mas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Thing/behaviour"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//SubThing">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//SubThing/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//SubThing/functions"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Agent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//Agent/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Agent/cardinality"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Agent/amodel"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Cproperty"/>
+    <genClasses ecoreClass="AiotML.ecore#//PropertyAssign">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//PropertyAssign/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//PropertyAssign/index"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//PropertyAssign/init"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Protocol"/>
+    <genClasses ecoreClass="AiotML.ecore#//Function">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Function/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Function/typeRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Function/extraTypeRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Function/body"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//Function/abstract"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//Property/readonly"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Property/init"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Message">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Message/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Parameter"/>
+    <genClasses ecoreClass="AiotML.ecore#//Port">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//Port/sends"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//Port/receives"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//RequiredPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//RequiredPort/optional"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ProvidedPort"/>
+    <genClasses ecoreClass="AiotML.ecore#//InternalPort"/>
+    <genClasses ecoreClass="AiotML.ecore#//State">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//State/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//State/entry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//State/exit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//State/internal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//State/outgoing"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Handler">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Handler/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Handler/guard"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Handler/action"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//Transition/target"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//InternalTransition"/>
+    <genClasses ecoreClass="AiotML.ecore#//CompositeState">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//CompositeState/region"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//CompositeState/session"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Session">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Session/maxInstances"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Region"/>
+    <genClasses ecoreClass="AiotML.ecore#//FinalState"/>
+    <genClasses ecoreClass="AiotML.ecore#//StateContainer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//StateContainer/initial"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//StateContainer/history"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//StateContainer/substate"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Event"/>
+    <genClasses ecoreClass="AiotML.ecore#//ReceiveMessage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//ReceiveMessage/port"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//ReceiveMessage/message"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Action"/>
+    <genClasses ecoreClass="AiotML.ecore#//ActionBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ActionBlock/actions"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ExternStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//ExternStatement/statement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ExternStatement/segments"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//LocalVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//LocalVariable/readonly"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//LocalVariable/init"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//SendAction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//SendAction/port"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//SendAction/message"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//SendAction/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//VariableAssignment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//VariableAssignment/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//VariableAssignment/index"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//VariableAssignment/extraProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//VariableAssignment/extraIndex"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//VariableAssignment/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//CpropertyAssignment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//CpropertyAssignment/cpropertys"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//CpropertyAssignment/cindex"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//CpropertyAssignment/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//CpropertyAssignment/pindex"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//CpropertyAssignment/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//StrategyStream">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//StrategyStream/inputs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//StrategyStream/strategy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//StrategyStream/outputs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//DictAssignment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//DictAssignment/dict"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//DictAssignment/elements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//DictAssignment/var"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ZipEnumerate">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//ZipEnumerate/vars"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//ZipEnumerate/fname"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//ZipEnumerate/sets"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ZipEnumerate/action"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Append">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//Append/pythonlist"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Append/element"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Increment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//Increment/var"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Decrement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//Decrement/var"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ForAction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ForAction/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ForAction/index"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ForAction/array"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ForAction/action"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//PyforAction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//PyforAction/variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//PyforAction/arrays"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//PyforAction/action"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//LoopAction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//LoopAction/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//LoopAction/action"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ConditionalAction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ConditionalAction/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ConditionalAction/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ConditionalAction/elseAction"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ReturnAction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ReturnAction/exp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ReturnAction/extraExp"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//PrintAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//PrintAction/line"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//PrintAction/msg"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ErrorAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//ErrorAction/line"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ErrorAction/msg"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//StartSession">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//StartSession/session"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//FunctionCallStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//FunctionCallStatement/function"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//FunctionCallStatement/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Expression"/>
+    <genClasses ecoreClass="AiotML.ecore#//ExternExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//ExternExpression/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ExternExpression/segments"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Literal"/>
+    <genClasses ecoreClass="AiotML.ecore#//ArrayInit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ArrayInit/values"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//EnumLiteralRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//EnumLiteralRef/enum"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//EnumLiteralRef/literal"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ByteLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//ByteLiteral/byteValue"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//CharLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//CharLiteral/charValue"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//IntegerLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//IntegerLiteral/intValue"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//BooleanLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//BooleanLiteral/boolValue"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//StringLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//StringLiteral/stringValue"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//DoubleLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//DoubleLiteral/doubleValue"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//PropertyReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//PropertyReference/property"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//CpropertyReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//CpropertyReference/cpropertys"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//CpropertyReference/cindex"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//CpropertyReference/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//CpropertyReference/pindex"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//EventReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//EventReference/receiveMsg"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//EventReference/parameter"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//FunctionCallExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//FunctionCallExpression/function"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//FunctionCallExpression/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Configuration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Configuration/instances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Configuration/connectors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//Configuration/propassigns"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//Instance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//Instance/type"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ConfigPropertyAssign">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//ConfigPropertyAssign/instance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//ConfigPropertyAssign/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ConfigPropertyAssign/index"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ConfigPropertyAssign/init"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ConfigPropertyAssign/annotations"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//AbstractConnector"/>
+    <genClasses ecoreClass="AiotML.ecore#//Connector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//Connector/cli"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//Connector/required"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//Connector/srv"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//Connector/provided"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ExternalConnector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//ExternalConnector/inst"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//ExternalConnector/port"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//ExternalConnector/protocol"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//OrExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//OrExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//OrExpression/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//AndExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//AndExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//AndExpression/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//EqualsExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//EqualsExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//EqualsExpression/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//NotEqualsExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//NotEqualsExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//NotEqualsExpression/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//GreaterExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//GreaterExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//GreaterExpression/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//LowerExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//LowerExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//LowerExpression/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//GreaterOrEqualExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//GreaterOrEqualExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//GreaterOrEqualExpression/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//LowerOrEqualExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//LowerOrEqualExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//LowerOrEqualExpression/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//PlusExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//PlusExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//PlusExpression/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//MinusExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//MinusExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//MinusExpression/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//TimesExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//TimesExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//TimesExpression/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//DivExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//DivExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//DivExpression/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ModExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ModExpression/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ModExpression/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//CastExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//CastExpression/term"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AiotML.ecore#//CastExpression/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AiotML.ecore#//CastExpression/isArray"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ExpressionGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ExpressionGroup/term"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//NotExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//NotExpression/term"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//UnaryMinus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//UnaryMinus/term"/>
+    </genClasses>
+    <genClasses ecoreClass="AiotML.ecore#//ArrayIndex">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ArrayIndex/array"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AiotML.ecore#//ArrayIndex/index"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

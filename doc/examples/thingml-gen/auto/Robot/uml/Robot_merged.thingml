@@ -1,0 +1,247 @@
+thing fragment RobotMsgs {
+	message distance(d : UInt16)
+	message bump(direction : UInt8)
+	message turn(angle : Int16)
+	message forward(speed : UInt8)
+	message backward(speed : UInt8)
+	message stop()
+	message odometry(left : Int16, right : Int16)
+	message wheel_position()
+}
+thing RobotControl includes RobotMsgs {
+	required port rangefinder {
+		receives distance
+	}
+	required port bumper {
+		receives bump
+	}
+	required port platform {
+		sends forward sends backward sends stop sends turn receives odometry
+	}
+}
+thing DistanceSensor includes RobotMsgs {
+	provided port data {
+		sends distance
+	}
+}
+thing CollisionSensor includes RobotMsgs {
+	provided port data {
+		sends bump
+	}
+}
+thing MotionControl includes RobotMsgs {
+	provided port ctrl {
+		sends odometry receives forward receives backward receives stop receives turn
+	}
+	required port left {
+		sends forward sends backward sends stop receives wheel_position
+	}
+	required port right {
+		sends forward sends backward sends stop receives wheel_position
+	}
+}
+thing WheelControl includes RobotMsgs {
+	provided port ctrl {
+		sends wheel_position receives forward receives backward receives stop
+	}
+	property motor_position : Int16
+	function init_motor() do
+	end
+	function set_motor_speed(speed : Int16) do
+	end
+	statechart init Stopped {
+		on entry init_motor()
+		state Stopped {
+			on entry set_motor_speed(0)
+			transition -> Forward
+			event e : ctrl?forward
+			action set_motor_speed(e.speed)
+			transition -> Backward
+			event e : ctrl?backward
+			action set_motor_speed(-e.speed)
+		}
+		state Forward {
+			transition -> Forward
+			event e : ctrl?forward
+			action set_motor_speed(e.speed)
+			transition -> Stopped
+			event e : ctrl?stop
+		}
+		state Backward {
+			transition -> Backward
+			event e : ctrl?backward
+			action set_motor_speed(-e.speed)
+			transition -> Stopped
+			event e : ctrl?stop
+		}
+	}
+}
+thing WheelControlArduino includes RobotMsgs @c_global `
+#define enA 9
+#define in1 6
+#define in2 7` {
+	provided port ctrl {
+		sends wheel_position receives forward receives backward receives stop
+	}
+	property motor_position : Int16
+	function init_motor() do
+	`pinMode(enA, OUTPUT);
+		 pinMode(in1, OUTPUT);
+		 pinMode(in2, OUTPUT);
+		 digitalWrite(in1, LOW);
+  		 digitalWrite(in2, HIGH);
+  		 analogWrite(enA, 0);`
+	end
+	function set_motor_speed(speed : Int16) do
+		if (speed == 0) `analogWrite(enA, 0);`
+		else if (speed > 0) do
+			`digitalWrite(in1, LOW);
+	 		 digitalWrite(in2, HIGH);
+	 		 analogWrite(enA, ` & speed & `);`
+		end
+		else do
+			`digitalWrite(in1, HIGH);
+	 		 digitalWrite(in2, LOW);
+	 		 analogWrite(enA, ` & -speed & `);`
+		end
+	end
+	statechart init Stopped {
+		on entry init_motor()
+		state Stopped {
+			on entry set_motor_speed(0)
+			transition -> Forward
+			event e : ctrl?forward
+			action set_motor_speed(e.speed)
+			transition -> Backward
+			event e : ctrl?backward
+			action set_motor_speed(-e.speed)
+		}
+		state Forward {
+			transition -> Forward
+			event e : ctrl?forward
+			action set_motor_speed(e.speed)
+			transition -> Stopped
+			event e : ctrl?stop
+		}
+		state Backward {
+			transition -> Backward
+			event e : ctrl?backward
+			action set_motor_speed(-e.speed)
+			transition -> Stopped
+			event e : ctrl?stop
+		}
+	}
+}
+datatype Byte<1>
+	@type_checker `Integer`
+	@c_type `uint8_t`
+	@java_type `byte`
+	@js_type `byte`
+	@go_type `byte`
+datatype Char<1>
+	@type_checker `Integer`
+	@c_type `char`
+	@java_type `byte`
+	@js_type `byte`
+	@go_type `byte`
+datatype Boolean<1>
+	@type_checker `Boolean`
+	@c_type `bool`
+	@java_type `boolean`
+	@js_type `boolean`
+	@go_type `bool`
+datatype UInt8<1>
+	@type_checker `Integer`
+	@c_type `uint8_t`
+	@java_type `int`
+	@js_type `short`
+	@go_type `uint8`
+datatype Int8<1>
+	@type_checker `Integer`
+	@c_type `int8_t`
+	@java_type `int`
+	@js_type `short`
+	@go_type `int8`
+datatype UInt16<2>
+	@type_checker `Integer`
+	@c_type `uint16_t`
+	@java_type `int`
+	@js_type `int`
+	@go_type `uint16`
+datatype Int16<2>
+	@type_checker `Integer`
+	@c_type `int16_t`
+	@java_type `int`
+	@js_type `short`
+	@go_type `int16`
+datatype Int32<4>
+	@type_checker `Integer`
+	@c_type `int32_t`
+	@java_type `long`
+	@js_type `int`
+	@go_type `int32`
+datatype UInt32<4>
+	@type_checker `Integer`
+	@c_type `uint32_t`
+	@java_type `long`
+	@js_type `long`
+	@go_type `uint32`
+datatype Long<4>
+	@type_checker `Integer`
+	@c_type `uint32_t`
+	@java_type `long`
+	@js_type `long`
+	@go_type `uint32`
+datatype Int64<8>
+	@type_checker `Integer`
+	@c_type `int64_t`
+	@java_type `long`
+	@js_type `long`
+	@go_type `int64`
+datatype UInt64<8>
+	@type_checker `Integer`
+	@c_type `uint64_t`
+	@java_type `long`
+	@js_type `long`
+	@go_type `uint64`
+datatype Integer<2>
+	@type_checker `Integer`
+	@c_type `int16_t`
+	@java_type `int`
+	@js_type `short`
+	@go_type `int16`
+datatype Float<4>
+	@type_checker `Real`
+	@c_type `float`
+	@java_type `float`
+	@js_type `float`
+	@go_type `float32`
+datatype Double<8>
+	@type_checker `Real`
+	@c_type `double`
+	@java_type `double`
+	@js_type `double`
+	@go_type `float64`
+object String
+	@serializable
+	@c_type `char *`
+	@java_type `String`
+	@js_type `String`
+	@go_type `string`
+enumeration DigitalState as UInt8 {
+	LOW = 0
+	HIGH = 1
+}
+configuration Robot @compiler `uml` {
+	instance robot : RobotControl
+	instance sdist : DistanceSensor
+	instance scoll : CollisionSensor
+	instance motion : MotionControl
+	instance left_wheel : WheelControl
+	instance right_wheel : WheelControl
+	connector robot.rangefinder => sdist . data
+	connector robot.bumper => scoll . data
+	connector robot.platform => motion . ctrl
+	connector motion.left => left_wheel . ctrl
+	connector motion.right => right_wheel . ctrl
+}
